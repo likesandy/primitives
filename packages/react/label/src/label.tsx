@@ -23,6 +23,7 @@ const Label = React.forwardRef<LabelElement, LabelProps>((props, forwardedRef) =
 
         props.onMouseDown?.(event);
         // prevent text selection when double clicking label
+        // 防止双击标签时选择文本
         if (!event.defaultPrevented && event.detail > 1) event.preventDefault();
       }}
     />

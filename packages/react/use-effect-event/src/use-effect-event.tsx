@@ -12,6 +12,10 @@ const useReactInsertionEffect = (React as any)[' useInsertionEffect '.trim().toS
  * Designed to approximate the behavior on `experimental_useEffectEvent` as best
  * as possible until its stable release, and back-fill it as a shim as needed.
  */
+// ! useEffectEvent = useMemoizedFn(ahooks)
+// https://alibaba.github.io/zh-CN/hooks/use-memoized-fn
+// 创建一个引用永远不变但内部逻辑总是最新的函数，解决 Effect 依赖数组中包含函数导致的不必要重执行问题
+// 使用 useInsertionEffect / useLayoutEffect 同步更新最新的回调,然后返回memo的函数
 export function useEffectEvent<T extends AnyFunction>(callback?: T): T {
   if (typeof useReactEffectEvent === 'function') {
     return useReactEffectEvent(callback);

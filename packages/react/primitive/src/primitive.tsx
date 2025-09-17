@@ -34,6 +34,7 @@ interface PrimitiveForwardRefComponent<E extends React.ElementType>
  * Primitive
  * -----------------------------------------------------------------------------------------------*/
 
+// ! 可以通过<Primitive.div/>形式创建div组件
 const Primitive = NODES.reduce((primitive, node) => {
   const Slot = createSlot(`Primitive.${node}`);
   const Node = React.forwardRef((props: PrimitivePropsWithRef<typeof node>, forwardedRef: any) => {

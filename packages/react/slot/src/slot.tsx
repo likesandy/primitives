@@ -9,6 +9,7 @@ interface SlotProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
 }
 
+// ! 渲染slot
 /* @__NO_SIDE_EFFECTS__ */ export function createSlot(ownerName: string) {
   const SlotClone = createSlotClone(ownerName);
   const Slot = React.forwardRef<HTMLElement, SlotProps>((props, forwardedRef) => {
@@ -63,6 +64,7 @@ interface SlotCloneProps {
   children: React.ReactNode;
 }
 
+// ! 拷贝ref和props(单个children)创建新的元素
 /* @__NO_SIDE_EFFECTS__ */ function createSlotClone(ownerName: string) {
   const SlotClone = React.forwardRef<any, SlotCloneProps>((props, forwardedRef) => {
     const { children, ...slotProps } = props;
@@ -124,6 +126,7 @@ function isSlottable(
   );
 }
 
+// ! 合并props(handle event, style, className)
 function mergeProps(slotProps: AnyProps, childProps: AnyProps) {
   // all child props should override
   const overrideProps = { ...childProps };

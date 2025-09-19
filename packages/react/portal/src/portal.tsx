@@ -18,6 +18,7 @@ interface PortalProps extends PrimitiveDivProps {
   container?: Element | DocumentFragment | null;
 }
 
+// ! ssr + asChild 模式结合
 const Portal = React.forwardRef<PortalElement, PortalProps>((props, forwardedRef) => {
   const { container: containerProp, ...portalProps } = props;
   const [mounted, setMounted] = React.useState(false);

@@ -29,6 +29,7 @@ const Separator = React.forwardRef<SeparatorElement, SeparatorProps>((props, for
   const orientation = isValidOrientation(orientationProp) ? orientationProp : DEFAULT_ORIENTATION;
   // `aria-orientation` defaults to `horizontal` so we only need it if `orientation` is vertical
   const ariaOrientation = orientation === 'vertical' ? orientation : undefined;
+  // ! decorative 无障碍功能
   const semanticProps = decorative
     ? { role: 'none' }
     : { 'aria-orientation': ariaOrientation, role: 'separator' };

@@ -5,6 +5,7 @@ import { Primitive } from '@radix-ui/react-primitive';
  * VisuallyHidden
  * -----------------------------------------------------------------------------------------------*/
 
+// 无障碍功能(不过国内貌似对这方面不重视)
 const VISUALLY_HIDDEN_STYLES = Object.freeze({
   // See: https://github.com/twbs/bootstrap/blob/main/scss/mixins/_visually-hidden.scss
   position: 'absolute',

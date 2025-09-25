@@ -1,6 +1,7 @@
 import * as React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import './globals.css';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
